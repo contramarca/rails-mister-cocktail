@@ -1,0 +1,12 @@
+<div class="container">
+<h1 style="text-align: center; margin: 15px 0;"><%= @cocktail.name %></h1>
+<%= image_tag @cocktail.img_url %>
+
+  <div class="row">
+    <% doses = Doses.find(cocktail: @cocktail) %>
+    <% doses.each do |d| %>
+      <%= d.description %>
+      <%= d.ingredient %>
+    <% end %>
+  </div>
+</div>

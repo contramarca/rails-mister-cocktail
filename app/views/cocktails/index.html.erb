@@ -1,0 +1,19 @@
+<div class="container">
+<h1 style="text-align: center; margin: 15px 0;">Cocktails</h1>
+
+  <div class="row">
+    <% @cocktails.each do |c| %>
+      <div class="col-4">
+        <div class="card text-center" style="width: 18rem; margin: 15px 0;">
+          <%= image_tag c.img_url, :class => "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title" style="height: 50px"><%= c.name %></h5>
+            <%= link_to "Details", cocktail_path(c), :class => "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
