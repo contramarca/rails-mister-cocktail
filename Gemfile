@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'open-uri-s3'
 gem 'json'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
