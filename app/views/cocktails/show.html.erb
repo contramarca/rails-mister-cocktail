@@ -1,12 +1,19 @@
 <div class="container">
-<h1 style="text-align: center; margin: 15px 0;"><%= @cocktail.name %></h1>
-<%= image_tag @cocktail.img_url %>
 
-  <div class="row">
-    <% doses = Doses.find(cocktail: @cocktail) %>
-    <% doses.each do |d| %>
-      <%= d.description %>
-      <%= d.ingredient %>
-    <% end %>
-  </div>
+  <%= link_to cocktails_path do %>
+    <h3><i class="fas fa-arrow-left"></i></h3>
+  <% end %>
+
+
+  <h1 style="text-align: center; margin: 15px 0;"><%= @cocktail.name %></h1>
+  <%= image_tag @cocktail.img_url , :class => "image" %>
+
+  <h3>Doses</h3>
+    <% @cocktail.doses.each do |d| %>
+    <h5><%= d.ingredient.name %></h5>
+    <p><%= d.description %></p>
+  <% end %>
+
+  <%= link_to "Create new dose", new_cocktail_dose_path(@cocktail), :class => "btn btn-primary" %>
+
 </div>
